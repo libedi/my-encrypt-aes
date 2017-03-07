@@ -77,7 +77,10 @@ public class AES128Cipher {
 	 * @throws IllegalBlockSizeException
 	 * @throws BadPaddingException
 	 */
-	public String encode(String text) throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidAlgorithmParameterException, UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException {
+	public String encode(String text) throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, 
+			InvalidAlgorithmParameterException, UnsupportedEncodingException, IllegalBlockSizeException, 
+			BadPaddingException {
+		
 		return encode(text, getDefaultSecretKey());
 	}
 	
@@ -94,7 +97,10 @@ public class AES128Cipher {
 	 * @throws IllegalBlockSizeException
 	 * @throws BadPaddingException
 	 */
-	public String encode(String text, SecretKey secretKey) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, InvalidAlgorithmParameterException, UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException {
+	public String encode(String text, SecretKey secretKey) throws NoSuchAlgorithmException, NoSuchPaddingException, 
+			InvalidKeyException, InvalidAlgorithmParameterException, UnsupportedEncodingException, 
+			IllegalBlockSizeException, BadPaddingException {
+		
 		if(text == null || secretKey == null) {
 			throw new IllegalArgumentException("Argument must be not null.");
 		}
@@ -115,7 +121,10 @@ public class AES128Cipher {
 	 * @throws IllegalBlockSizeException
 	 * @throws BadPaddingException
 	 */
-	public String decode(String encodedBase64Text) throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidAlgorithmParameterException, UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException {
+	public String decode(String encodedBase64Text) throws InvalidKeyException, NoSuchAlgorithmException, 
+			NoSuchPaddingException, InvalidAlgorithmParameterException, UnsupportedEncodingException, 
+			IllegalBlockSizeException, BadPaddingException {
+		
 		return decode(encodedBase64Text, getDefaultSecretKey());
 	}
 	
@@ -132,7 +141,10 @@ public class AES128Cipher {
 	 * @throws IllegalBlockSizeException
 	 * @throws BadPaddingException
 	 */
-	public String decode(String encodedBase64Text, SecretKey secretKey) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, InvalidAlgorithmParameterException, UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException {
+	public String decode(String encodedBase64Text, SecretKey secretKey) throws NoSuchAlgorithmException, 
+			NoSuchPaddingException, InvalidKeyException, InvalidAlgorithmParameterException, 
+			UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException {
+		
 		if(encodedBase64Text == null || secretKey == null) {
 			throw new IllegalArgumentException("Argument must be not null.");
 		}
