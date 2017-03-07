@@ -31,7 +31,8 @@ public class TestAesCipher {
 	public void testCipher() throws Exception {
 		String text = "Test String";
 		SecretKey sk = this.cipher.generateSecretKey();
-		String encodedText = this.cipher.encode(text, sk);
+		String key = AES128Cipher.getSecretKeyString(sk);
+		String encodedText = this.cipher.encode(text, this.cipher.getSecretKey(key));
 		System.out.println("ENCODED TEXT by RANDOM SK : " + encodedText);
 		String decodeText = this.cipher.decode(encodedText, sk);
 		System.out.println("DECODED TEXT by RANDOM SK : " + decodeText);
