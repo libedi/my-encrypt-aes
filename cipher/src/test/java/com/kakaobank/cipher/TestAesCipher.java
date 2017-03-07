@@ -9,11 +9,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TestAesCipher {
-	private AES128Cipher cipher;
+	private AesEncryptor cipher;
 	
 	@Before
 	public void setUp() throws Exception {
-		this.cipher = AES128Cipher.getInstance();
+		this.cipher = AesEncryptor.getInstance();
 		assertNotNull(cipher);
 	}
 	
@@ -31,7 +31,7 @@ public class TestAesCipher {
 	public void testCipher() throws Exception {
 		String text = "Test String";
 		SecretKey sk = this.cipher.generateSecretKey();
-		String key = AES128Cipher.getSecretKeyString(sk);
+		String key = AesEncryptor.getSecretKeyString(sk);
 		String encodedText = this.cipher.encode(text, this.cipher.getSecretKey(key));
 		System.out.println("ENCODED TEXT by RANDOM SK : " + encodedText);
 		String decodeText = this.cipher.decode(encodedText, sk);

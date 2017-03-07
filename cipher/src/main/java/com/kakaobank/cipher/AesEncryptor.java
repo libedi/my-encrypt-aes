@@ -26,7 +26,7 @@ import org.apache.commons.codec.binary.Hex;
  * @author 박상준
  *
  */
-public class AES128Cipher {
+public class AesEncryptor {
 	private static final String CRYPTO_ALGORITHM = "AES/CBC/PKCS5Padding";
 	private static final String CRYPTO_TYPE = "AES";
 	private static final Charset CHARSET = Charsets.UTF_8;
@@ -35,13 +35,13 @@ public class AES128Cipher {
 	private static final String DEFAULT_SECRET_KEY = "1ad6f2us8dl3fh8e";
 	private static final String IV = "2d9587b0c1d37a6e";
 	
-	private static volatile AES128Cipher instance;
+	private static volatile AesEncryptor instance;
 	
-	public static AES128Cipher getInstance() {
+	public static AesEncryptor getInstance() {
 		if(instance == null){
-			synchronized(AES128Cipher.class) {
+			synchronized(AesEncryptor.class) {
 				if(instance == null) {
-					instance = new AES128Cipher();
+					instance = new AesEncryptor();
 				}
 			}
 		}
